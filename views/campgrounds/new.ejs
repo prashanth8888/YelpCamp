@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Add a new Camping Location!</h1>
+            <div style="width: 30%;margin: 25px auto;">
+                <form action="/camping" method="POST">
+                <div class="form-group">
+                    <label for="campname">Name</label>
+                    <input class="form-control" type="text" name="campname" placeholder="Name"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="imageurl">URL-Image</label>
+                    <input class="form-control" type="text" name="imageurl" placeholder="Image Url"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="price">Price per day</label>
+                    <input class="form-control" type="number" name="price" placeholder="price" min="0.01" step="0.01"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" placeholder="Yosemite National Park, CA">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Describe the place</label>
+                    <input class="form-control" type="text" name="description" placeholder="Description..."></input>    
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</input>    
+                </div>
+            </div>
+            </form>
+            <a href = "/camping">Go Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>

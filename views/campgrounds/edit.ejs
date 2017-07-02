@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+<div class="container">
+    <div class="row">
+        <h1 style="text-align: center">Edit the campground - <%= campground.name %></h1>
+            <div style="width: 30%;margin: 25px auto;">
+                <form action="/camping/<%= campground._id %>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <label for="campground[name]">Name</label>
+                    <input class="form-control" type="text" name="campground[name]" value="<%= campground.name %>"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="campground[image]">URL-Image</label>
+                    <input class="form-control" type="text" name="campground[image]" value="<%= campground.image %>"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="campground[price]">Price per day</label>
+                    <input class="form-control" type="number" name="campground[price]" value="<%= campground.price %>" min="0.01" step="0.01"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="campground[location]" id="location" value="<%= campground.location %>">
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Describe the place</label>
+                    <input class="form-control" type="text" name="campground[description]" value="<%= campground.description %>"></input>    
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit</input>    
+                </div>
+            </div>
+            </form>
+            <a href = "/camping">Go Back</a>
+    </div>
+</div>
+
+<% include ../partials/footer %>
