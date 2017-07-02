@@ -20,6 +20,23 @@ var campgroundRoutes = require("./routes/camping"),
 
 // //Setup
 // mongoose.connect("mongodb://localhost/yelp_camp_v12_1");
+app.use(bodyParser.urlencoded({extended: true}));
+app.set("view engine", "ejs");
+app.use(flash());
+app.locals.moment = require("moment");
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+
+const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+
+app.use(session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,    
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    cookie:{maxAge: 180 * 60 * 1000}
+}));
 
 //Setup
 // mongoose.connect("mongodb://localhost/yelp_camp_v12_1");
@@ -27,12 +44,7 @@ var campgroundRoutes = require("./routes/camping"),
 // process.env.DATABASEURL
 mongoose.connect(process.env.DATABASEURL);
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.set("view engine", "ejs");
-app.use(flash());
-app.locals.moment = require("moment");
-app.use(express.static(__dirname + "/public"));
-app.use(methodOverride("_method"));
+
 seedDB();
 
 
