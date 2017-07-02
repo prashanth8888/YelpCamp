@@ -48,11 +48,11 @@ mongoose.connect(process.env.DATABASEURL);
 seedDB();
 
 
-app.use(require("express-session")({
-   secret: "With great power comes great responsibility! Trust me about it",
-   resave: false,
-   saveUninitialized: false
-}));
+// app.use(require("express-session")({
+//    secret: "With great power comes great responsibility! Trust me about it",
+//    resave: false,
+//    saveUninitialized: false
+// }));
 
 //PASSPORT SETUP
 app.use(passport.initialize());
