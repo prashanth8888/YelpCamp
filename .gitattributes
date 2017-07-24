@@ -1,2 +1,3 @@
 # Linguist
 node_modules/ejs/* linguist-vendored
+*.ejs linguist-language=JavaScript
