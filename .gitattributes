@@ -1,2 +1,2 @@
-special-vendored-path/* linguist-vendored
+node_modules/ejs/test/fixtures/* linguist-vendored
 jquery.js linguist-vendored=false
